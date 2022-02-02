@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MapBox</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js'></script>
+    <!-- Mapbox CSS -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css' type='text/css' />
+    <link rel="stylesheet" href="css/mapbox_maps_api.css">
+</head>
+<body>
+<h1>My MapBox Map</h1>
+<h3>Display 3 places I frequent for food</h3>
+<h4>You can add Multiple Markers and it will return the address type when clicked.</h4>
+<h4>Zoom in on map at different levels</h4>
+
+<button type="button" id="zoom-five">Zoom X 5</button>
+<button type="button" id="zoom-fifthteen">Zoom X 15</button>
+<button type="button" id="zoom-twenty">Zoom X 20</button>
+<button type="button" id="hide-markers">Hide Markers</button>
+<br>
+<br>
+<div id="map"></div>
+
+<script src="js/jquery.js"></script>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script src="js/keys.js"></script>
+<!--Functions for geocoding and reverse geocoding-->
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="js/mapbox_maps_api.js"></script>
+</body>
+</html>
