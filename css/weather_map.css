@@ -1,0 +1,23 @@
+#map {
+    /* the width and height may be set to any size */
+    width: 80%;
+    height: 500px;
+}
+
+body { margin: 0; padding: 0; }
+#map { top: 0; bottom: 0; width: 100%; }
+
+#info {
+    display: table;
+    position: relative;
+    margin: 0px auto;
+    word-wrap: anywhere;
+    white-space: pre-wrap;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: center;
+    color: #222;
+    background: #fff;
+}
