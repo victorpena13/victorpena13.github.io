@@ -43,7 +43,7 @@
         var userInput = event.result.center;
         var lon = userInput[0];
         var lat = userInput[1];
-        $.get("http://api.openweathermap.org/data/2.5/onecall", {
+        $.get("https://api.openweathermap.org/data/2.5/onecall", {
             APPID: openWeatherAPI_key,
             lat: lat,
             lon: lon,
