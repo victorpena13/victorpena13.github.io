@@ -8,21 +8,31 @@
         zoom: 13,// starting zoom
     });
 
-    var htmlString = '';
-    var iconList = [];
     //search through clicking on the map
     map.on('click', (e) => {
+        var htmlString = '';
+        var iconList = [];
         var lng = e.lngLat.lng;
         var lat = e.lngLat.lat;
-        $.get("http://api.openweathermap.org/data/2.5/weather", {
+        $.get("http://api.openweathermap.org/data/2.5/onecall", {
             APPID: openWeatherAPI_key,
             lat: lat,
             lon: lng,
             units: "imperial"
         }).done(function (data){
-            console.log(data);
-            var weatherData = data.weather[0].description;
-            $('.row').html(weatherData);
+            var fiveDayForecast = data.daily;
+            for(var i = 0; i < 5; i++) {
+                var icon = "<img src='" + "http://openweathermap.org/img/wn/" + fiveDayForecast[i].weather[0].icon + "@2x.png'>";
+                iconList.push(icon);
+                htmlString += '<div class="col">' + iconList[i] +
+                    '<br>' + 'temp morn: ' + fiveDayForecast[i].temp.morn +
+                    '<br>' + new Date(fiveDayForecast[i].dt * 1000) + '</div>';
+            }
+            $('.row').html(htmlString);
+
+            // console.log(data);
+            // var weatherData = data.weather[0].description;
+            // $('.row').html(weatherData);
         });
         document.getElementById('info').innerHTML =
 // `e.point` is the x, y coordinates of the `mousemove` event
@@ -42,6 +52,8 @@
     map.addControl(geocoder);
     geocoder.on('result', (event) => {
         var userInput = event.result.center;
+        var htmlString = '';
+        var iconList = [];
         var lon = userInput[0];
         var lat = userInput[1];
         $.get("https://api.openweathermap.org/data/2.5/onecall", {
