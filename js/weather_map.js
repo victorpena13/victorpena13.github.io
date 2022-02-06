@@ -8,7 +8,6 @@
         zoom: 13,// starting zoom
     });
 
-
     function getWeather(latitude, longitude, APIkey) {
         var htmlString = '';
         var iconList = [];
@@ -31,7 +30,6 @@
         });
     }
 
-
     //search through clicking on the map
     map.on('click', (e) => {
         var lng = e.lngLat.lng;
@@ -46,7 +44,6 @@
             JSON.stringify(e.lngLat.wrap());
     });
 
-
     //searchBar:
     const geocoder = new MapboxGeocoder({
         // Initialize the geocoder
@@ -56,10 +53,16 @@
     });
     map.addControl(geocoder);
     geocoder.on('result', (event) => {
+        var locationName =event.result.place_name
         var coordinates = event.result.center;
         var lon = coordinates[0];
         var lat = coordinates[1];
         getWeather(lat, lon, openWeatherAPI_key);
+        var marker = new mapboxgl.Marker()
+            .setLngLat(coordinates)
+            .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+                .setHTML(locationName)
+            )
+            .addTo(map)
     });
 }) ();
-
