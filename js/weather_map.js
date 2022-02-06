@@ -14,7 +14,7 @@
         var iconList = [];
         var lng = e.lngLat.lng;
         var lat = e.lngLat.lat;
-        $.get("http://api.openweathermap.org/data/2.5/onecall", {
+        $.get("https://api.openweathermap.org/data/2.5/onecall", {
             APPID: openWeatherAPI_key,
             lat: lat,
             lon: lng,
@@ -29,10 +29,6 @@
                     '<br>' + new Date(fiveDayForecast[i].dt * 1000) + '</div>';
             }
             $('.row').html(htmlString);
-
-            // console.log(data);
-            // var weatherData = data.weather[0].description;
-            // $('.row').html(weatherData);
         });
         document.getElementById('info').innerHTML =
 // `e.point` is the x, y coordinates of the `mousemove` event
