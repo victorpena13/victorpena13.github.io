@@ -14,7 +14,7 @@
         var iconList = [];
         var lng = e.lngLat.lng;
         var lat = e.lngLat.lat;
-        $.get("https://api.openweathermap.org/data/2.5/onecall", {
+        $.get("http://api.openweathermap.org/data/2.5/onecall", {
             APPID: openWeatherAPI_key,
             lat: lat,
             lon: lng,
