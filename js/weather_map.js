@@ -51,7 +51,7 @@
             units: "imperial",
         }).done(function (data){
             var fiveDayForecast = data.daily;
-            htmlString += '<h6>7 Day Forecast</h6>';
+            htmlString += '<h6>5 Day Forecast</h6>';
             for(var i = 0; i < 5; i++) {
                 var icon = "<img src='" + "http://openweathermap.org/img/wn/" + fiveDayForecast[i].weather[0].icon + "@2x.png'>";
                 iconList.push(icon);
