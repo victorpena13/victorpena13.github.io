@@ -44,7 +44,7 @@
         var userInput = event.result.center;
         var lon = userInput[0];
         var lat = userInput[1];
-        $.get("http://api.openweathermap.org/data/2.5/onecall", {
+        $.get("https://api.openweathermap.org/data/2.5/onecall", {
             APPID: openWeatherAPI_key,
             lat: lat,
             lon: lon,
@@ -55,7 +55,7 @@
             for(var i = 0; i < 5; i++) {
                 var icon = "<img src='" + "http://openweathermap.org/img/wn/" + fiveDayForecast[i].weather[0].icon + "@2x.png'>";
                 iconList.push(icon);
-                htmlString += '<div class="col">' + iconList[i] +
+                htmlString += '<div class="col">' +  +
                     '<br>' + 'temp morn: ' + fiveDayForecast[i].temp.morn +
                     '<br>' + new Date(fiveDayForecast[i].dt * 1000) + '</div>';
             }
