@@ -14,13 +14,13 @@
         <div class="col">
             <h1>Search by Roast:</h1>
             <form>
-                <select name="roast_preference">
-                    <option value="all">All</option>
+                <label for="search-by-roast-preference">Roast</label>
+                <select id="search-by-roast-preference" name="roast_preference">
                     <option value="light">Light Roast</option>
-                    <option value="espresso">Medium Roast</option>
+                    <option value="medium">Medium Roast</option>
                     <option value="dark">Dark Roast</option>
                 </select>
-                <input type="submit">
+                <button id='search-roast-preference' type="button">submit</button>
             </form>
             <h1>Search by Name:</h1>
             <input id="searchBar" name="searchBar" type="text">
