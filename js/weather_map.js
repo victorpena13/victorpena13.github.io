@@ -18,12 +18,14 @@
             units: "imperial",
         }).done(function (data) {
             var fiveDayForecast = data.daily;
+            console.log(fiveDayForecast[0]);
             htmlString += '<h6>5 Day Forecast</h6>';
             for (var i = 0; i < 5; i++) {
                 var icon = "<img src='" + "http://openweathermap.org/img/wn/" + fiveDayForecast[i].weather[0].icon + "@2x.png'>";
                 iconList.push(icon);
                 htmlString += '<div class="col">' + iconList[i] +
                     '<br>' + 'temp morn: ' + fiveDayForecast[i].temp.morn +
+                    '<br>' + 'temp day: ' + fiveDayForecast[i].temp.day +
                     '<br>' + new Date(fiveDayForecast[i].dt * 1000) + '</div>';
             }
             $('.row').html(htmlString);
