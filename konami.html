@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+    <style>
+        body {
+            background-color: orange;
+        }
+        #gexImg {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+<h1>Konami Code</h1>
+<p>enter cheat code</p>
+<p>['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'];</p>
+<span id="image"></span>
+<script src="js/jquery.js"></script>
+<script>
+    (function() {
+        "use strict";
+        var allowedKeys = {38 : 'up', 40 : 'down', 39 : 'right', 37 : 'left', 66 : 'b', 65 : 'a'};
+        var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'];
+
+        function activateCheat(){
+            $('body').css('background-color', "orange");
+            $('#image').html("<img src='img/gex.jpg' id='gexImg'>");
+            alert("30 Lives Added!");
+            var audio = new Audio('audio/cem.mp3');
+            audio.play();
+        }
+        var codePosition = 0;
+        $('body').keydown(function(e){
+            var userInput = allowedKeys[e.keyCode];
+            var cheatCode = konamiCode[codePosition];
+
+            if (userInput == cheatCode) {
+                codePosition++;
+                if(codePosition == konamiCode.length) {
+                    activateCheat();
+                }
+            }
+        });
+    })();
+</script>
+</body>
+</html>
