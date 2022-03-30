@@ -9,7 +9,7 @@ body{
     background: gray;
 }
 .parallax {
-    background-image: url('images/intialImage.png');
+    background-image: url('images/international_space_station.jpeg');
     background-attachment: fixed;
     height: 500px;
 }
