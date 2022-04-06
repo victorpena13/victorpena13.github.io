@@ -9,7 +9,7 @@ body{
     background: gray;
 }
 .parallax {
-    background-image: url('images/reddit-place.png');
+    background-image: url('images/theplace2022_2.png');
     background-attachment: fixed;
     height: 500px;
 }
