@@ -11,4 +11,4 @@ function changeFavicon(src) {
     }
     document.head.appendChild(link);
 }
-changeFavicon('css/images/victor_pena_logo_square.png');
+changeFavicon('css/images/duck.png');
